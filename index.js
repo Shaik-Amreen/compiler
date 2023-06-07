@@ -64,10 +64,10 @@ testcodeapi = async (data) => {
 
 
 router.post('/', function (req, res) {
-    
+
     req.body = JSON.parse(req.body.data);
     let response = []
-   
+
     req.body.paramvalues.forEach(async (e, index) => {
         let code = req.body.ans;
         let language = req.body.language;
@@ -95,4 +95,4 @@ router.post('/', function (req, res) {
 //add the router 
 app.use('/', router);
 
-app.listen(4000, () => console.log("server listened"))
+app.listen(3000, () => console.log("server listened"))
