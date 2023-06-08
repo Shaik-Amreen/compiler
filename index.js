@@ -81,11 +81,11 @@ router.post('/', function (req, res) {
         };
         let s = await testcodeapi(data);
         return res.send({ response: "hello", data: s })
-        console.log(s)
-        response.push(s)
-        if (index == req.body.paramvalues.length - 1) {
-            return res.send({ message: "success", response: response })
-        }
+        // console.log(s)
+        // response.push(s)
+        // if (index == req.body.paramvalues.length - 1) {
+        //     return res.send({ message: "success", response: response })
+        // }
 
     });
 
