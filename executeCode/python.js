@@ -7,7 +7,7 @@ const runCode = async (codeFile, inputs) => {
   console.log("timeouttt", timeout)
   try {
     const output = await new Promise((resolve, reject) => {
-      const codeExec = spawn("python", [
+      const codeExec = spawn("python3", [
         `${path.join(__dirname, `../codes/${codeFile}`)}`,
       ]);
 
