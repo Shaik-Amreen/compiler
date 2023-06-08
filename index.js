@@ -45,9 +45,11 @@ testcodeapi = async (data) => {
         switch (language) {
             case "java":
                 output = await executeJava(codeFile, input);
+                return { message: "data after params java", response: output }
                 break;
             case "py":
                 output = await executePython(codeFile, input);
+                return { message: "data after params python", response: output }
                 break;
             case "cpp":
                 output = await executeCorCPP(codeFile, input);
@@ -77,9 +79,8 @@ router.post('/', function (req, res) {
             language: language,
             input: input,
         };
-        return res.send({ message: "data after params", response: data })
         let s = await testcodeapi(data);
-
+        return res.send({ response: "hello", data: s })
         console.log(s)
         response.push(s)
         if (index == req.body.paramvalues.length - 1) {
