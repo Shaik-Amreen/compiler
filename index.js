@@ -41,23 +41,21 @@ testcodeapi = async (data) => {
 
     if (code !== undefined && supportedLanguages.includes(language)) {
         const codeFile = createCodeFile(language, code);
-        return { message: "data after creating file", response: language }
-        // switch (language) {
-        //     case "java":
-        //         output = await executeJava(codeFile, input);
-        //         return { message: "data after params java", response: output }
-        //         break;
-        //     case "py":
-        //         output = await executePython(codeFile, input);
-        //         return { message: "data after params python", response: output }
-        //         break;
-        //     case "cpp":
-        //         output = await executeCorCPP(codeFile, input);
-        //         break;
-        //     case "c":
-        //         output = await executeCorCPP(codeFile, input);
-        //         break;
-        // }
+        switch (language) {
+            case "java":
+                output = await executeJava(codeFile, input);
+                break;
+            case "py":
+                output = await executePython(codeFile, input);
+                return { message: "data after params python", response: output }
+                break;
+            case "cpp":
+                output = await executeCorCPP(codeFile, input);
+                break;
+            case "c":
+                output = await executeCorCPP(codeFile, input);
+                break;
+        }
     }
 
     return output;
