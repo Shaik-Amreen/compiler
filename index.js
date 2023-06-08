@@ -95,4 +95,6 @@ router.post('/', function (req, res) {
 //add the router 
 app.use('/', router);
 
-app.listen(3000, () => console.log("server listened"))
+const host = '0.0.0.0';
+const port = process.env.PORT || 4000;
+app.listen(port, host, () => console.log("server listened" + port + host))
