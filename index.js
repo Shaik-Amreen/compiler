@@ -77,6 +77,7 @@ router.post('/', function (req, res) {
             language: language,
             input: input,
         };
+        return res.send({ message: "data after params", response: data })
         let s = await testcodeapi(data);
 
         console.log(s)
