@@ -8,7 +8,7 @@ const runCode = async (codeFile, inputs) => {
   try {
     const output = await new Promise((resolve, reject) => {
       const codeExec = spawn("python3", [
-        `${path.join(__dirname, `../codes/4fcdb126-cb90-4a25-be73-da3957b39b8a.py`)}`,
+        `${path.join(__dirname, `../codes/${codeFile}`)}`,
       ]);
 
 
