@@ -1,1 +1,1 @@
-return "arikya"
+print("arikya")
